@@ -20,10 +20,11 @@ dist-ssr
 *.suo
 *.ntvs*
 *.njsproj
-*.sln
 *.sw?
+
 
 
 # frontend
 node_modules
 .env*
+
