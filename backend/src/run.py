@@ -1,17 +1,22 @@
 """Main configuration file for quart"""
 
+import os
 from quart import Quart, ResponseReturnValue  # type: ignore
-from quart_auth import AuthManager  # type: ignore
+from quart_auth import QuartAuth  # type: ignore
 from quart_rate_limiter import RateLimiter, RateLimitExceeded
 from quart_schema import RequestSchemaValidationError
+from quart_uploads import configure_uploads, UploadSet
 
-from backend.src.lib.api_error import APIError
+
+from lib.api_error import APIError
 
 app = Quart(__name__)
 app.config.from_prefixed_env(prefix="DH")
 
-auth_manager = AuthManager(app)
+auth_manager = QuartAuth(app)
 rate_limiter = RateLimiter(app)
+
+upload_set = UploadSet()
 
 
 @app.errorhandler(APIError)
@@ -45,4 +50,6 @@ async def handle_request_schema_validation_error(
 @app.get("/health")
 async def default_route() -> ResponseReturnValue:
     """Initial method to check server status"""
-    return {"status": "Online"}
+    length = os.getenv("MAX_CONTENT_LENGTH", "notfound")
+    print(length)
+    return {"status": "Online"}, 200
