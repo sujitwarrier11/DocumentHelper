@@ -5,7 +5,7 @@ description = "Default template for PDM package"
 authors = [
     {name = "Sujit Warrier", email = "sujit.warrier11@gmail.com"},
 ]
-dependencies = ["quart>=0.20.0", "quart-auth>=0.11.0", "bcrypt>=4.2.1", "zxcvbn>=4.4.28", "itsdangerous>=2.2.0", "quart-rate-limiter>=0.11.0", "quart-schema>=0.21.0", "pydantic[email]>=2.10.4", "langchain-community>=0.3.13", "tiktoken>=0.8.0", "langchainhub>=0.1.21", "chromadb>=0.6.1", "langchain>=0.3.13", "langchain-ollama>=0.2.2", "langchain-nomic>=0.1.4", "nomic[local]>=3.3.4", "scikit-learn>=1.6.0", "langgraph>=0.2.61", "bs4>=0.0.2", "quart-uploads>=0.0.4"]
+dependencies = ["quart>=0.20.0", "quart-auth>=0.11.0", "bcrypt>=4.2.1", "zxcvbn>=4.4.28", "itsdangerous>=2.2.0", "quart-rate-limiter>=0.11.0", "quart-schema>=0.21.0", "pydantic[email]>=2.10.4", "langchain-community>=0.3.13", "tiktoken>=0.8.0", "langchainhub>=0.1.21", "chromadb>=0.6.1", "langchain>=0.3.13", "langchain-ollama>=0.2.2", "langchain-nomic>=0.1.4", "nomic[local]>=3.3.4", "scikit-learn>=1.6.0", "langgraph>=0.2.61", "bs4>=0.0.2", "quart-uploads>=0.0.4", "python-dotenv>=1.0.1", "quart-cors>=0.8.0", "pypdf>=5.1.0"]
 requires-python = "==3.12.*"
 readme = "README.md"
 license = {text = "MIT"}

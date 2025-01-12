@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Quart",
+            "type": "debugpy",
+            "program": "${workspaceFolder}/backend/src/run.py",
+            "request": "launch",
+            "jinja": true,
+            "env": {
+                "FLASK_ENV": "dev",
+                "QUART_ENV": "dev",
+                "QUART_APP": "${workspaceFolder}/backend/src/run.py"
+            },
+            "envFile": "dev.env",
+            "console": "integratedTerminal"
+        }
+    ]
+}
