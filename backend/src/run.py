@@ -10,6 +10,7 @@ from quart_auth import QuartAuth  # type: ignore
 from quart_rate_limiter import RateLimiter, RateLimitExceeded
 from quart_schema import RequestSchemaValidationError
 from blueprints.file_services import blueprint as file_blueprint
+from blueprints.query_services import blueprint as query_blueprint
 from quart_cors import cors
 
 
@@ -36,9 +37,8 @@ app.config.from_prefixed_env(prefix="DH")
 auth_manager = QuartAuth(app)
 rate_limiter = RateLimiter(app)
 
-
-
 app.register_blueprint(file_blueprint)
+app.register_blueprint(query_blueprint)
 
 
 @app.errorhandler(APIError)
